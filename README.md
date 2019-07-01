@@ -5,7 +5,7 @@ Standards tested are requiring `IE >= 9`, `document.addEventListener`, and, opti
 
 Tested in Chrome, Firefox, Safari, IE6+
 
-Use like: `<script src = 'excludes.js' get = 'fallback.html'></script>`
+Use like: `<script src = 'excludes.js' get = 'YOUR_URL_HERE'></script>`
 
 For W3C compatibility, `data-get` is also supported. If both `get` and `data-get` are specified, `data-get` is used.
 
