@@ -11,7 +11,7 @@
 		if (!hasAttribute(elem, attr)) { return null; } 
 		var attr = (elem.getAttribute) ? elem.getAttribute(attr) : 0;
 		
-		if (typeof attr !== 'string') { // TODO: parse outerHTML. attr is an OBJECT if we query the style attribute in IE6/7, but we're not doing this anyway.
+		if (typeof attr !== 'string') { // TODO: parse outerHTML. attr is an OBJECT if we query the style attribute in IE6/7, but we're not doing this anyway (yet).
 			return null;
 		}
 		
