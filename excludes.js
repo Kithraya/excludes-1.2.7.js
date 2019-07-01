@@ -31,18 +31,20 @@
 	
 	var obsolete = (function(win,undefined) { // script tags if not async or defer are executed in the order they appear.
 		var t = true;
+		var min_version = 9; 
 		var isOldIE = (function() { // handy conditional compilation
 			var version = new Function("/*@cc_on return @_jscript_version; @*/")(); 
 			
 			// "5.6/7": IE6, "5.7": IE7, "5.8": IE8, "9":IE9, "10": IE10, "11": IE11 with an older document mode.
 			
-			return !!(version && parseInt( version, 10 ) < 9);
+			return !!(version && parseInt( version, 10 ) < min_version);
 			})();
 		if (isOldIE || !document.addEventListener) { return t } // require IE > 8 and addEventListener support.
 		
-		// Technically just checking for addEventListener invalidates IE <= 8, but if you wanted to also exclude
-		// IE9 and 10, change the version number to 11: parseInt( version, 10 ) < 11. (etc)
-		// to exclude IE11, check for is_IE11 and parseInt( version, 10 ) <= 11.
+		// Technically just checking for addEventListener invalidates IE <= 8.
+		// To exclude IE9 and 10, change min_version to 11
+		// to exclude IE11 as well, change min_version to 12 and check
+		// if (is_IE11 || isOldIE) {... }
 		// you can add more custom logic here if required, just remember to return a Boolean.
 		
 	})(win);
