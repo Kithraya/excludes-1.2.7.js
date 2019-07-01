@@ -18,9 +18,13 @@
 		return attr;
 	}
 	
+	var is_IE11 = !('currentScript' in document) && !!window.msCrypto ; // msCrypto (with the prefix) is only defined in IE11 (for now).
+	// And document.currentScript is not defined in any version of IE, but all versions of Edge support it.
+	// so we combine the checks to future proof it.
+	
 	var obsolete = (function(win,undefined) { // script tags are executed in the order they appear.
 		var t = true;
-		var isOldIE = (function() { 
+		var isOldIE = (function() { // handy conditional compilation
 			var version = new Function("/*@cc_on return @_jscript_version; @*/")(); // "5.6/7": IE6, "5.7": IE7, "5.8": IE8, "9":IE9, "10": IE10
 			return !!(version && parseInt( version, 10 ) < 9);
 			})();
@@ -28,7 +32,7 @@
 		
 		// Technically just checking for addEventListener invalidates IE <= 8, but if you wanted to also exclude
 		// IE9 and 10, change the version number to 11: parseInt( version, 10 ) < 11.
-		// to exclude IE11, check for document.currentScript
+		// to exclude IE11, check for is_IE11
 		// you can add more custom logic here if required, but remember to return a Boolean
 		
 	})(win);
