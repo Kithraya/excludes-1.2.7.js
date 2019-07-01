@@ -1,5 +1,5 @@
 # excludes
-Provides an automatic redirect upon encountering an obsolete browser.
+Provides an automatic redirect to an URL of your choice upon encountering an obsolete browser.
 
 Standards tested are requiring `IE >= 9`, `document.addEventListener`.
 
