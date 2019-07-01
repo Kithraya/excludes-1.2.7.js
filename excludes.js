@@ -3,7 +3,7 @@
 
 // if obsolete, change window.location to URL
 
-(function(win, undefined) { // keep the global namespace unpolluted
+(function(win, undefined) { // keep the global namespace unpolluted by wrapping in an IIFE
 	
 	function hasAttribute(elem, attr) { return (('hasAttribute' in elem) ? elem.hasAttribute(attr) : (typeof elem[attr] !== 'undefined'));  } // elem[attr] notation works for IE6/7
 	function getAttribute(elem, attr) {
