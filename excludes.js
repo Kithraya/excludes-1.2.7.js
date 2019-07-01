@@ -26,7 +26,10 @@
 			})();
 		if (isOldIE || !document.addEventListener) { return t } // require IE > 8 and addEventListener support.
 		
-		// you can add custom logic here if required, just return a truthy value.
+		// Technically just checking for addEventListener invalidates IE <= 8, but if you wanted to also exclude
+		// IE9 and 10, change the version number to 11: parseInt( version, 10 ) < 11.
+		// to exclude IE11, check for document.currentScript
+		// you can add more custom logic here if required, but remember to return a Boolean
 		
 	})(win);
 	
@@ -36,7 +39,7 @@
 		for (i=0; i < scripts.length; i++) {
 			elem = scripts[i];
 			attr = getAttribute(elem, 'data-get') || getAttribute(elem, 'get') || 
-             getAttribute(elem, 'data-fallback') || getAttribute(elem, 'fallback') || false;
+             		       getAttribute(elem, 'data-fallback') || getAttribute(elem, 'fallback') || false;
 			if (attr) { 
 				window.location.href = attr; break;
 			}
