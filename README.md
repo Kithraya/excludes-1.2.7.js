@@ -1,7 +1,7 @@
 # excludes
 Provides an automatic redirect to an URL of your choice upon encountering an obsolete browser.
 
-Standards tested are requiring `IE >= 9`, `document.addEventListener`.
+Standards tested are requiring `IE >= 9`, `document.addEventListener`, and, optionally, `document.currentScript`.
 
 Tested in Chrome, Firefox, Safari, IE6+
 
