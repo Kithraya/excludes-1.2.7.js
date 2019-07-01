@@ -26,6 +26,8 @@
 	// https://stackoverflow.com/questions/21825157/internet-explorer-11-detection
 	// And document.currentScript is not defined in any version of IE, but all versions of Edge support it.
 	// so we combine the checks to future proof it.
+	// If documentMode has been changed from the default, this will return false,
+	// but @_jscript_version will return "11".
 	
 	var obsolete = (function(win,undefined) { // script tags if not async or defer are executed in the order they appear.
 		var t = true;
