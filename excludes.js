@@ -32,7 +32,8 @@
 	var obsolete = (function(win,undefined) { // script tags if not async or defer are executed in the order they appear.
 		var t = true;
 		var min_version = 9; 
-		var isOldIE = (function() { // handy conditional compilation
+		var isOldIE = (function() { 
+			// using handy conditional compilation which executes in IE only, and does not change with document mode.
 			var version = new Function("/*@cc_on return @_jscript_version; @*/")(); 
 			
 			// "5.6/7": IE6, "5.7": IE7, "5.8": IE8, "9":IE9, "10": IE10, "11": IE11 with an older document mode.
@@ -43,9 +44,13 @@
 		
 		// Technically just checking for addEventListener invalidates IE <= 8.
 		// To exclude IE9 and 10, change min_version to 11
-		// to exclude IE11 as well, change min_version to 12 and check
-		// if (is_IE11 || isOldIE) {... }
+		// to exclude IE11 as well, change min_version to 12 and write
+		// if (is_IE11 || isOldIE) { return true }
+		
 		// you can add more custom logic here if required, just remember to return a Boolean.
+		
+		// if you want a finer-grained function that determines the exact version of IE, look at:
+		// https://github.com/Kithraya/detect-IE
 		
 	})(win);
 	
