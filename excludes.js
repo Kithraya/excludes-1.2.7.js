@@ -1,5 +1,5 @@
 
-// Excludes obsolete browsers (IE < 9), unsupported addEventListener etc. from entering the page. MIT license. https://github.com/Kithraya/excludes
+// Excludes obsolete browsers (IE < 9), unsupported addEventListener etc. from entering your web page. MIT license. https://github.com/Kithraya/excludes
 
 // if obsolete, change window.location to URL
 
