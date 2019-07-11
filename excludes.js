@@ -29,7 +29,7 @@
 
 	/*  Conditional compilation (@cc_on) executes in IE only, and does not change with the document mode.
 	    Browsers other than IE will interpret this as `new Function("")()` which is the same as `function()()` which is `undefined`. 
-	    parseInt(undefined) returns NaN which is falsy
+	    `parseInt(undefined)` returns `NaN` which is falsy
 	    by default, IE11 will not interpret conditional compilations, unless IE11 is in an older document mode
 	*/
 	
