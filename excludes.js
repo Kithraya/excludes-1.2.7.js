@@ -19,13 +19,13 @@
 	    https://stackoverflow.com/questions/21825157/internet-explorer-11-detection
 	    And document.currentScript is not defined in any version of IE, but all versions of Edge support it.
 	    so we combine the checks to future proof it.
-	    If documentMode has been changed from the default, is_IE11 will be `false`, but @_jscript_version will return "11".
+	    If documentMode has been changed from the default, `is_IE11` will be `false`, but `@_jscript_version` will return "11".
 	*/
 
 	var jscript_version = parseInt( new Function("/*@cc_on return @_jscript_version; @*/")() , 10); 
 	
 	// values before parseInt:
-	// NOT IE: undefined, IE6: "5.6" or "5.7", IE7: "5.7", IE8: "5.8", IE9: "9", IE10: "10", IE11 in an older document mode: "11"
+	// NOT IE: `undefined`, IE6: "5.6" or "5.7", IE7: "5.7", IE8: "5.8", IE9: "9", IE10: "10", IE11 in an older document mode: "11"
 
 	/*  Conditional compilation (@cc_on) executes in IE only, and does not change with the document mode.
 	    Browsers other than IE will interpret this as `new Function("")()` which is the same as `function()()` which is `undefined`. 
@@ -36,7 +36,7 @@
 	if ( jscript_version || !document.addEventListener ) { obsolete = true; }
 	// Do not allow IE11 operating in older document modes, else code may still break
 	
-	// to exclude IE 11 period, uncomment the following line: 
+	// to exclude IE 11 period, regardless of document mode, uncomment the following line: 
 	///	if (is_IE11 || jscript_version === 11 ) { obsolete = true; }
 	
 	var scripts = document.getElementsByTagName('script');
@@ -45,7 +45,7 @@
 		for (i=0; i < scripts.length; i++) {
 			elem = scripts[i];
 			if (elem.getAttribute) { 
-				// getAttribute is not foolproof in every situation but it's usable for our purposes here
+				// `getAttribute` is not foolproof in every situation but it's usable for our purposes here
 				attr = elem.getAttribute('data-redirect') || elem.getAttribute('redirect') || 
 				       elem.getAttribute('data-fallback') || elem.getAttribute('fallback') || false;
 				if (attr) {
@@ -53,7 +53,7 @@
 				}
 			} else {
 				window.location.href = 'https://google.co.uk'; 
-				// if you find a browser where getAttribute isn't supported, let me know
+				// if you find a browser where `getAttribute` isn't supported, let me know
 			}
 		}
 	}
