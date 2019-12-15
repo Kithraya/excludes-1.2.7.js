@@ -1,4 +1,4 @@
-# excludes
+# excludes.js
 Provides an automatic redirect to an URL of your choice upon encountering an obsolete browser.
 
 Standards tested are requiring `IE >= 11`, `document.addEventListener`, and, optionally, `document.currentScript`.
