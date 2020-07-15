@@ -44,7 +44,7 @@
 
 		} catch (e) { return true; } return false; 
 	})();
-	// required DOM interfaces: new Error(), new Date(), Element.prototype, Event.prototype, Node.nodeType, Navigator.userAgent
+	// required DOM interfaces: new Error(), new Date(), Element.prototype, Event.prototype, new Image(), Node.nodeType, Navigator.userAgent
 	
 	if (did_throw) { obsolete = true }
 	// to exclude IE 11 period, regardless of document mode, uncomment the following line: 
