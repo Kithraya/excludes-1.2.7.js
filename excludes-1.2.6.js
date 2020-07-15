@@ -13,7 +13,7 @@
 // add document.currentScript ?
 // add document.visiblityState?
 
-(function(win, doc, undefined) { // keep the global namespace unpolluted by wrapping in an IIFE
+;(function(win, doc, undefined) { // keep the global namespace unpolluted by wrapping in an IIFE
 
 	var version = "1.2.6";
 	var obsolete = false;
