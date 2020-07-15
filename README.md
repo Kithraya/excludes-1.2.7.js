@@ -5,7 +5,7 @@ Standards tested are requiring `IE >= 11`, `document.addEventListener`, and, opt
 
 Tested in Chrome, Firefox, Safari, IE6+, etc. via BrowserStack.
 
-Use like: `<script src = 'excludes.js' redirect = 'YOUR_URL_HERE'></script>`
+Use like: `<script src = 'excludes-1.2.6.js' redirect = 'YOUR_URL_HERE'></script>`
 Add that before your other scripts.
 
 For W3C / HTML5 compatibility, `data-redirect` is also supported. If both `redirect` and `data-redirect` are specified, `data-redirect` is used.
