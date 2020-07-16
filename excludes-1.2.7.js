@@ -1,7 +1,5 @@
-/** 
-	Excludes obsolete browsers (IE < 11), old Safari, old Opera unsupported addEventListener etc. from entering the page 
-    by redirecting to a specified URL before your code runs
-    MIT license. https://github.com/Kithraya/excludes 
+/** Excludes obsolete browsers (IE < 11), old Safari, old Opera unsupported addEventListener etc. from entering the page 
+    by redirecting to a specified URL before your code runs | MIT license. https://github.com/Kithraya/excludes |
     Tested in IE6+, Chrome, Firefox, Edge, Opera 10.6+, etc.
 */
 
