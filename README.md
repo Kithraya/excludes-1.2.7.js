@@ -1,7 +1,7 @@
 # excludes.js
 Provides an automatic redirect to an URL of your choice upon encountering an obsolete browser.
 
-Standards tested are requiring `IE >= 11`, `document.addEventListener`, `window.matchMedia`, support for the `void` operator, etc.
+Standards tested are requiring (Browser & Document Mode) `IE >= 11`, `document.addEventListener`, `window.matchMedia`, support for the `void` operator, etc.
 
 Tested in Chrome, Firefox, Safari, IE6+, etc. via BrowserStack.
 
